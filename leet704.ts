@@ -1,9 +1,22 @@
 const search = (nums: number[], target: number): number => {
-  let output = -1;
 
-  return output;
+    let start = 0;
+    let end = nums.length - 1;
+    let mid:number;
+
+    while(start <= end){
+        mid = Math.floor((start + end) / 2)
+        if(target < nums[mid]){
+            end = mid - 1
+        } else if(target > nums[mid]){
+            start = mid + 1
+        } else if(target == nums[mid]){
+            return mid
+        }
+    }
+
+    return -1
 };
-console.log(search([-1, 0, 3, 5, 9, 12, 13, 14, 15, 16], 16)); //10
-console.log(search([-1, 0, 3, 5, 9, 12, 13, 14, 15, 16], 3)); //10
-console.log(search([-1, 0, 3, 5, 9, 12, 13, 14, 15], 14)); //9
-console.log(search([-1, 0, 3, 5, 9, 12, 13, 14, 15], 3)); //9
+
+console.log(search([-1,0,3,5,9,12],0));
+console.log(search([-1,0,3,5,9,12,13],0));
