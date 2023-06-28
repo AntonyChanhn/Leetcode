@@ -60,7 +60,7 @@ class MyLinkedList {
   }
 
   deleteAtIndex(index: number): void {
-    if (index < 0 || index > this.length) {
+    if (index < 0 || index >= this.length) {
       return;
     }
     let cur: LinkedNode | null = this.dummyHead;
@@ -75,7 +75,7 @@ class MyLinkedList {
 //  Your MyLinkedList object will be instantiated and called as such:
 let obj = new MyLinkedList();
 obj.addAtHead(2);
-console.log("head: " + obj.get(0));
+console.log("head: " + obj.get(0) + obj.get(1));
 
 // obj.addAtTail(1);
 // console.log("tail: " + obj.get(0) + obj.get(1));
@@ -84,4 +84,4 @@ console.log("head: " + obj.get(0));
 // console.log("index: " + obj.get(0) + obj.get(1) + obj.get(2));
 
 obj.deleteAtIndex(1);
-console.log("delete: " + obj.get(0) + obj.get(1) + obj.get(2));
+console.log("delete: " + obj.get(0) + obj.get(1));
