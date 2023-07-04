@@ -32,7 +32,20 @@ slow 慢指針: 取得需要被取代的元素
 暴力解法
 
 ```typescript
+const removeElement2 = (nums:number[],val:number):number =>{
+    let size = nums.length;
 
+    for(let i = 0; i < nums.length; i++) {
+        if(nums[i] === val){
+            for(let j = i + 1 ; j < nums.length; j++) {
+                nums[j - 1] = nums[j]
+            }
+            i--
+            size--
+        }  
+    }
+    return size
+}
 ```
 
 雙指針法(快慢指針)
