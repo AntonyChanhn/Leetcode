@@ -9,6 +9,7 @@
 
 其實就是一開始時是如何定義**數組的區間**。如果定義了end = nums.lenght那**數組的區間就是包頭不包尾**。
 試想想,如果組數是[1,2,3,4],而end = nums.lenght,在loop的最後num[end]就是num[4]<-這是undefined。所以loop要在此之前停止,因此**數組的區間就是包頭不包尾**。
+
 而如果是end = nums.lenght - 1**數組的區間就是包頭包尾**。
 同理end = nums.lenght - 1,在loop的最後num[end]就是num[3]<-這是4。所以loop要在此之後才停止,因此**數組的區間就是包頭包尾**。
 
