@@ -28,6 +28,9 @@
 **循環不變量**就是在循環中堅持對數組區間的定義進行處理。
 
 ## Code
+
+包頭包尾
+
 ``` typesrcipt
 const search = (nums: number[], target: number): number => {
 
