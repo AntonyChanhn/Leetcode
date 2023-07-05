@@ -20,7 +20,7 @@
 
 ```typescript
 const sortedSquares = (nums: number[]): number[] => {
-    let start:number = 0, end:number = nums.length - 1, count = nums.length - 1;
+    let start:number = 0, end:number = nums.length - 1, count:number = nums.length - 1;
     let outputArray:number[] = new Array(nums.length);
 
     while(start <= end) {
