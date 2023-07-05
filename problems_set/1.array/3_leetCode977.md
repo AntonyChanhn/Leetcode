@@ -19,5 +19,20 @@
 ## Code
 
 ```typescript
+const sortedSquares = (nums: number[]): number[] => {
+    let start:number = 0, end:number = nums.length - 1, count = nums.length - 1;
+    let outputArray:number[] = new Array(nums.length);
 
+    while(start <= end) {
+        if(nums[start] ** 2 > nums[end] ** 2) {
+            outputArray[count] = nums[start] ** 2;
+            start++;
+        }else {
+            outputArray[count] = nums[end] ** 2;
+            end--;
+        }
+        count--;
+    }
+    return outputArray;
+};
 ```
