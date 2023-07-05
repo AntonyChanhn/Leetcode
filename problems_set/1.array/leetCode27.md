@@ -4,11 +4,11 @@
 
 [leetcode link](https://leetcode.com/problems/remove-element/)
 
-題目指明要在原生的數組中進行修改,因此不能再定義新的數組,Space complexity 要為 O(1)。
+ + 題目指明要在原生的數組中進行修改,因此不能再定義新的數組,Space complexity 要為 O(1)。
 
-數組在記憶體中的位置是連續的,不能單獨刪除, 只可以覆蓋。
+ + 不能使用 built-in function,要從底層原理寫。
 
-不能使用 built-in function,要從底層原理寫。
+ + 數組在記憶體中的位置是連續的,不能單獨刪除, 只可以覆蓋。
 
 ## 解題思路及重點
 
@@ -18,7 +18,7 @@
 
 ### 雙指針法(快慢指針)
 
-定義兩個變數 fast 及 slow,一開始都是指向數組的頭,然後同時一起向後 loop,直到找到要刪除的目標時 fast 繼續向後移(fast 就是用來歷遍數組,不會停止移動),slow 暫時不動,再者將 fast 取代 slow 以此循環直到結束,slow 就是修改後數組的長度。
+定義兩個變數 fast 及 slow,一開始都是指向數組的頭,然後同時一起向後 loop,直到找到要刪除的目標時 fast 繼續向後移(fast 是用來歷遍數組,不會停止移動),slow 暫時不動,再者將 fast 取代 slow 以此循環直到結束,slow 就是修改後數組的長度。
 
 這題的重點就是明白兩個指針的作用
 
@@ -32,7 +32,7 @@ slow 慢指針: 取得需要被取代的元素
 暴力解法
 
 ```typescript
-const removeElement2 = (nums:number[],val:number):number =>{
+const removeElement = (nums:number[],val:number):number =>{
     let size = nums.length;
 
     for(let i = 0; i < nums.length; i++) {
@@ -44,6 +44,7 @@ const removeElement2 = (nums:number[],val:number):number =>{
             size--
         }  
     }
+
     return size
 }
 ```
@@ -51,5 +52,17 @@ const removeElement2 = (nums:number[],val:number):number =>{
 雙指針法(快慢指針)
 
 ```typescript
+const removeElement = (nums:number[],val:number):number =>{
+    let fast:number = 0, slow:number = 0;
 
+    while(fast < nums.length) {
+        if(val !== nums[fast]) {
+            nums[slow] = nums[fast]
+            slow++
+        }
+        fast++
+    }
+    
+    return slow
+}
 ```
