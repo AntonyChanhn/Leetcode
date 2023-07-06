@@ -10,9 +10,9 @@
 
 定義兩個指針如start and end,一開始同時指向數組的開端,以end獲取數組的值,獲取到的值以變數sum儲存。
 
-如果sum小於target,那end向後移。
+end 在loop 中每次都向後移動而歷編數組(如果是用if statement,那只有sum小於target,那end向後移。)
 
-如果sum大於target,那將窗口長度(也就是子數組長度:end - start + 1)比較變數output(一開始給output一個不可能超越的值如:nums.length + 1 or Math.Max()),取較小的值=output,
+如果sum大於或等於target,那將窗口長度(也就是子數組長度:end - start + 1)比較變數output(一開始給output一個不可能超越的值如:nums.length + 1 or Math.Max()),取較小的值=output,
 之後再sum -= nums[start](如果是用if statement更新子數組的話就要再減nums[end],也就是sum = sum - nums[start] - nums[end]),同時將start++。
 
 最後return output前要比較output是否一開始給的值,如果是就return 0(沒有符合的條件),不是就return output。
@@ -23,7 +23,7 @@
 
 這題的重點也是如何移動窗口(子數組)的頭及尾端,並將當前窗口(子數組)內的值以sum儲存。
 
-如果當前窗口(子數組)內的值(sum)大於target,那窗口(子數組)就要縮小,也就是窗口(子數組)的頭端向後移動
+如果當前窗口(子數組)內的值(sum)大於或等於target,那窗口(子數組)就要縮小,也就是窗口(子數組)的頭端向後移動
 
 如果當前窗口(子數組)內的值(sum)小於target,那窗口(子數組)的尾端向後移動繼續歷編數組。
 
