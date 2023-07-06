@@ -65,19 +65,18 @@ const minSubArrayLen = (target: number, nums: number[]): number => {
 ```
 滑動窗口 version 2
 ```typescript
-const minSubArrayLen = (target: number, nums: number[]): number  => {
-    let sum:number = 0, fast:number = 0, slow:number = 0, output:number = nums.length + 1;
-    while(fast < nums.length){
-        sum += nums[fast];
+const minSubArrayLen = (target: number, nums: number[]): number => {
+    let sum: number = 0, start: number = 0, end: number = 0, output: number = nums.length + 1;
+    while(end < nums.length){
+        sum += nums[end];
         if(sum >= target ) {            
-            output = output > fast - slow + 1 ? fast - slow + 1 : output
-            sum = sum - nums[slow] - nums[fast];
-            slow++;
+            output = output > end - start + 1 ? end - start + 1 : output;
+            sum = sum - nums[start] - nums[end];
+            start++;
         }else {
-            fast++;
+            end++;
         }
     }
-
-    return output == nums.length + 1 ? 0 : output
+    return output == nums.length + 1 ? 0 : output;
 };
 ```
