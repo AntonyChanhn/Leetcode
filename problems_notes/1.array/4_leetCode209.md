@@ -30,6 +30,22 @@
 
 滑動窗口
 ```typescript
+const minSubArrayLen = (target: number, nums: number[]): number => {
+    let start: number = 0, end: number = 0, output: number = nums.length + 1, sum: number = 0;
+    while (end < nums.length) {
+        sum += nums[end];
+        while (sum >= target) {
+            output = output < end - start + 1 ? output : end - start + 1
+            sum -= nums[start];
+            start++
+        }
+        end++;
+    }
+    return output === nums.length + 1 ? 0 : output;
+}
+```
+version 2
+```typescript
 const minSubArrayLen = (target: number, nums: number[]): number  => {
     let sum:number = 0, fast:number = 0, slow:number = 0, output:number = nums.length + 1;
     while(fast < nums.length){
