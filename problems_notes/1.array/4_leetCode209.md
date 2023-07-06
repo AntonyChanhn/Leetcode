@@ -28,7 +28,7 @@
 
 ## Code
 
-暴力解法
+暴力解法(leetCode上已經過不到 Exceeded time limit)
 ```typescript
 const minSubArrayLen = (target: number, nums: number[]): number => {
     let output: number = nums.length + 1, sum: number;
