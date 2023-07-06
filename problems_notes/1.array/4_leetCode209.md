@@ -10,7 +10,7 @@
 
 定義兩個指針如start and end,一開始同時指向數組的開端,以end獲取數組的值,獲取到的值以變數sum儲存。
 
-end 在loop 中每次都向後移動而歷編數組(如果是用if statement,那只有sum小於target,那end向後移。)
+end 在loop 中每次都向後移動以歷編數組(如果是用if statement,那只有sum小於target,end才向後移。)
 
 如果sum大於或等於target,那將窗口長度(也就是子數組長度:end - start + 1)比較變數output(一開始給output一個不可能超越的值如:nums.length + 1 or Math.Max()),取較小的值=output,
 之後再sum -= nums[start](如果是用if statement更新子數組的話就要再減nums[end],也就是sum = sum - nums[start] - nums[end]),同時將start++。
