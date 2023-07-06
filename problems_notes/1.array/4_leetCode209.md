@@ -77,6 +77,6 @@ const minSubArrayLen = (target: number, nums: number[]): number => {
             end++;
         }
     }
-    return output == nums.length + 1 ? 0 : output;
+    return output === nums.length + 1 ? 0 : output;
 };
 ```
