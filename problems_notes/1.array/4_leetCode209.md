@@ -28,6 +28,25 @@
 
 ## Code
 
+暴力解法
+```typescript
+const minSubArrayLen = (target: number, nums: number[]): number => {
+    let output: number = nums.length + 1, sum: number;
+
+    for(let i = 0; i < nums.length; i++){
+        sum = 0
+        for(let j = i; j < nums.length; j++) {
+            sum += nums[j];
+            if(sum >= target) {
+                output = output < j - i + 1 ? output : j - i + 1;
+                break;
+            }
+        }
+    }
+    return output === nums.length + 1 ? 0 : output;
+}
+```
+
 滑動窗口
 ```typescript
 const minSubArrayLen = (target: number, nums: number[]): number => {
@@ -44,7 +63,7 @@ const minSubArrayLen = (target: number, nums: number[]): number => {
     return output === nums.length + 1 ? 0 : output;
 }
 ```
-version 2
+滑動窗口 version 2
 ```typescript
 const minSubArrayLen = (target: number, nums: number[]): number  => {
     let sum:number = 0, fast:number = 0, slow:number = 0, output:number = nums.length + 1;
