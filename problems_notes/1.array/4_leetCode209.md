@@ -14,6 +14,8 @@
 
 如果sum大於target,那將窗口長度(也就是子數組長度:end - start + 1)比較變數output(一開始給output一個不可能超越的值如:nums.length + 1 or Math.Max()),取較小的值=output,之後再將sum - nums[start],同時將start++。
 
+最後return output前要比較output是否一開始給的值,如果是就return 0(沒有符合的條件),不是就return output。
+
 ## 重點
 
 雙指針法的重點一直都是如何控制指針,而滑動窗口也是雙指針法的一種,不過滑動窗口的兩個指針中間的子數組(也就是所謂的窗口)是有意義的,需要用到的,所以才叫滑動窗口。
