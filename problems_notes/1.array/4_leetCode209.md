@@ -12,7 +12,9 @@
 
 如果sum小於target,那end向後移。
 
-如果sum大於target,那將窗口長度(也就是子數組長度:end - start + 1)比較變數output(一開始給output一個不可能超越的值如:nums.length + 1 or Math.Max()),取較小的值=output,之後再將sum - nums[start],同時將start++。
+如果sum大於target,那將窗口長度(也就是子數組長度:end - start + 1)比較變數output(一開始給output一個不可能超越的值如:nums.length + 1 or Math.Max()),取較小的值=output,
+
+之後再sum -= nums[start](如果是用if更新子數組的話就要再減nums[end],也就是sum = sum - nums[start] - nums[end]),同時將start++。
 
 最後return output前要比較output是否一開始給的值,如果是就return 0(沒有符合的條件),不是就return output。
 
