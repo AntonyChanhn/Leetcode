@@ -6,9 +6,15 @@
 
 ## 解題思路
 
-使用虛擬頭節點
+在class MyLinkedList加入: 虛擬頭節點和length
 
 五個鏈表methods:
+
+**get(int):** 先判斷輸入的int 是否超過length, 是就return -1。定義current指向虛擬頭節點,用loop將current指向int所指的位置再將val reurn。
+
+**addAtHead(int):** 定義current指向虛擬頭節點,判斷current.next是否null,如是就current.next = new LinkedNode(int),否則curr.next = new LinkedNode(val, curr.next),再length + 1。
+**addAtTail(int):** 
+
 
 ## 重點
 
