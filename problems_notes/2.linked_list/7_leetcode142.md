@@ -14,14 +14,23 @@
 這題最難的點是想出: **將一個指針指向鏈表的頭,另一個指向前一次兩個指針相遇的節點,然後這次兩個指針每次都只移動一次,再次相遇的點就是循環的入口**
 
 以上可以用數學證明:
+
 let starting point of linked list to cycle entrance = x;
+
 let cycle entrance to meeting point = y;
+
 let meeting point to cycle entrance = z;
+
 let times of cycle = n;
+
 可以得出以下等式(要求x):
+
 2(x + y) = x + y + n(y + z)
+
 x + y = n(y + z)
+
 if n = 1
+
 x = z
 
 ## Code
