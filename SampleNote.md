@@ -1,6 +1,5 @@
 # leetcode (problem No.). (problem Name)
-
-[leetcode link](the leetcode Link)
+[leetcode link]()
 
 ## 解題思路
 
