@@ -26,6 +26,7 @@ const isAnagram = (s: string, t: string): boolean => {
 
     return true;
 };
+```
 
 使用array當作hash table
 
