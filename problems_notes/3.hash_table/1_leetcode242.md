@@ -30,6 +30,19 @@ const isAnagram = (s: string, t: string): boolean => {
 使用array當作hash table
 
 ```typescript
+const isAnagram = (s: string, t: string): boolean => {
+    if(s.length != t.length) return false;
+    let hash = new Array(26).fill(0);
 
-```
+    for(let i = 0; i < s.length; i++) {
+        hash[s[i].charCodeAt(0) - "a".charCodeAt(0)]++;
+        hash[t[i].charCodeAt(0) - "a".charCodeAt(0)]--;
+    }
+
+    for(let i = 0; i < hash.length; i++){
+        if(hash[i] != 0) return false;
+    }
+
+    return true;
+}
 ```
