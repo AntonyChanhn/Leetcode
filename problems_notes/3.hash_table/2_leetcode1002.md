@@ -7,13 +7,13 @@
 使用hash table(map)
 
 用兩個loop 歷遍string array,取每個字母。將字母放入map中,key為字母,value為長度是string array長度的number array,該number array代表該字母在string array的那個index中出現了多少次。
-之後再用一個loop歷遍map,將value中的number array取其最小的數字,然後再用一個loop,將字母放進空的string array中,要放多少次最決於value中的number array其最小的數字。
+之後再用一個loop歷遍map,將value中的number array取其最小的數字,然後再用一個loop,將字母放進最後return的空的string array中,要放多少次最決於value中的number array其最小的數字。
 
 使用array 作hash table
 
-定義兩個長度為26且每個值都為0的number array(fristArr,otherArr), 用一個loop將string array的第一個元素的字母及出現的次數放入fristArr(放入的方法[這裹](https://github.com/AntonyChanhn/Leetcode/blob/main/problems_notes/3.hash_table/1_leetcode242.md)有提及)
+定義兩個長度為26且每個值都為0的number array(fristArr,otherArr), 用一個loop將string array的第一個元素的字母及出現的次數放入fristArr(放入的方法[這裹](https://github.com/AntonyChanhn/Leetcode/blob/main/problems_notes/3.hash_table/1_leetcode242.md)有提及)。之後再用兩個loop歷遍剩下的string,每次也是將元素的字母及出現的次數放入otherArr中,之後用一個loop比較fristArr及otherArr一個index下那個數小,取最小值放進fristArr中。比較完後將otherArr清零。
 
-## 重點
+最後用一個loop歷遍fristArr,將對應的index轉化為字母(typescript中可以用fromCharCode,他可以將數字變成對應的字,如97是a;98是b;122是z)放進最後return的空的string array中,放進的次數就是其對應的value。
 
 ## Code
 
