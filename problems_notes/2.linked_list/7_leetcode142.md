@@ -23,7 +23,7 @@ let meeting point to cycle entrance = z;
 
 let times of cycle = n;
 
-可以得出以下等式(要求x):
+可以得出以下等式(求x):
 
 2(x + y) = x + y + n(y + z)
 
