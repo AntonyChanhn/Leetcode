@@ -4,7 +4,7 @@
 
 ## 解題思路
 
-## 重點
+定義一個map, key and value都是number。用一個loop歷遍nums,定義一個變數為target減當前元素,如果map中有該變數的存在,代表當前的元素與曾經出現過的元素相加等如target,這樣就可以return 當前元素的index及map的value。如果map中沒有該變數的存在,就將該變數放進map中,key為該變數,value為該變數的index。
 
 ## Code
 
