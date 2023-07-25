@@ -12,8 +12,6 @@
 
 定義一個長度為26且每個值都為0的number array。用一個loop將magazine的字母及出現的次數放入array中(放入的方法[這裹](https://github.com/AntonyChanhn/Leetcode/blob/main/problems_notes/3.hash_table/1_leetcode242.md)有提及)。之後再用一個loop將ransomNote對應在array的位置的數值減一,然後再判斷該數值是否小於零,如果是就return false。最後return true。
 
-## 重點
-
 ## Code
 
 使用hash table
