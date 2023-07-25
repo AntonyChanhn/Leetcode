@@ -8,6 +8,8 @@
 
 ## Code
 
+使用hash table
+
 ```typescript
 const canConstruct = (ransomNote: string, magazine: string): boolean => {
     let map:Map<string, number> = new Map<string, number>();
@@ -22,6 +24,25 @@ const canConstruct = (ransomNote: string, magazine: string): boolean => {
         } else {
             return false;
         }
+    }
+
+    return true;
+}
+```
+
+使用array作hash table
+
+```typescript
+const canConstruct = (ransomNote: string, magazine: string): boolean => {
+    let arr:number[] = new Array(26).fill(0);
+
+    for(let char of magazine) {
+        arr[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+    }
+
+    for(let char of ransomNote) {
+        arr[char.charCodeAt(0) - 'a'.charCodeAt(0)]--;
+        if(arr[char.charCodeAt(0) - 'a'.charCodeAt(0)] < 0) return false;
     }
 
     return true;
