@@ -4,7 +4,7 @@
 
 ## 解題思路
 
-## 重點
+解題思路和[3Sum](https://github.com/AntonyChanhn/Leetcode/blob/main/problems_notes/3.hash_table/8_leetcode15.md)是一樣的,只不過要再寫一層loop,以及4數相加要等如target然而。
 
 ## Code
 
