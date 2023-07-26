@@ -13,8 +13,6 @@
 
 再者在最外面的loop再將i去掉重覆,和上面去掉重覆一樣,如果nums[i] == nums[i + 1], i要移動一個位。最後return output。
 
-## 重點
-
 ## Code
 
 ```typescript
