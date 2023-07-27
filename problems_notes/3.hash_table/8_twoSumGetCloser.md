@@ -50,7 +50,6 @@ const twoSumCloser = (nums1:number[], nums2:number[], target:number):number[][] 
             start++;
             end--;
         }
-
     }
 
     for(let [key, val] of map ) {
