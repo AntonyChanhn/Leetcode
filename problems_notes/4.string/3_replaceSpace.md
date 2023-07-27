@@ -1,6 +1,7 @@
 # Problem: replace space
 
-把輸入的string中每一個空白轉換成%20,例:
+把輸入的string中每一個空白轉換成%20。例如:
+
 input:"we are happy.", output:"we%20are%20happy."
 
 ## 解題思路
