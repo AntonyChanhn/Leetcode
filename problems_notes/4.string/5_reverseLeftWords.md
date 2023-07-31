@@ -22,5 +22,42 @@
 ## Code
 
 ```typescript
+const reverseLeftWords = (s:string, n:number):string => {
+    let sArr:string[] = s.split("");
+    // let start:number, end:number;
 
+    const reverseWords = (start:number, end:number):void => {
+        while(start < end) {
+            [sArr[start], sArr[end]] = [sArr[end], sArr[start]];
+            start++;
+            end--;
+        }
+    }
+
+    reverseWords(0, n - 1);
+    reverseWords(n, s.length - 1);
+    reverseWords(0, s.length - 1);
+    // start = 0, end = n - 1;
+    // while(start < end) {
+    //     [sArr[start], sArr[end]] = [sArr[end], sArr[start]];
+    //     start++;
+    //     end--;
+    // }
+
+    // start = n, end = s.length - 1;
+    // while(start < end) {
+    //     [sArr[start], sArr[end]] = [sArr[end], sArr[start]];
+    //     start++;
+    //     end--;
+    // }
+
+    // start = 0, end = s.length - 1;
+    // while(start < end) {
+    //     [sArr[start], sArr[end]] = [sArr[end], sArr[start]];
+    //     start++;
+    //     end--;
+    // }
+
+    return sArr.join("");
+}
 ```
